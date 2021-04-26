@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We are the Five Senses of your Brand.">
+    <title>Contact: Cerebre Media</title>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="./css/cerebre.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <!-- Swiper Css -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="navContainer">
+            <a href="index.html" class="logo">
+                <img src="./assets/Cerebre logo - coloured NEW.png" alt="" />
+            </a>
+
+            <div class="navbar">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="navDisplay">
+        <div class="container">
+            <div class="navContent">
+                <div id="cases" class="sliders one"></div>
+                <div class="navDescription">
+                    <a href="./about.html" class="navbarLink"><span id="create">About</span></a>
+                    <p class="navDescText"><span id="create">We are the five senses of your brand.</span></p>
+                </div>
+            </div>
+            <div class="navContent">
+                <div class="sliders two"></div>
+                <div class="navDescription">
+                    <a href="#" class="navbarLink"><span id="create">Cases</span></a>
+                    <p class="navDescText"><span id="create">We like to let our work do the talking.</span></p>
+                </div>
+            </div>
+            <div class="navContent">
+                <div class="sliders three"></div>
+                <div class="navDescription">
+                    <a href="./contact.html" class="navbarLink"><span id="create">Contact</span></a>
+                    <p class="navDescText"><span id="create">We are just a step away.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="displayWrapper">
+        <div class="container">
+            <div class="display">
+                <div class="slider one"></div>
+            </div>
+            <div class="display">
+                <div class="slider two"></div>
+            </div>
+            <div class="display">
+                <div class="slider three"></div>
+            </div>
+        </div>
+        <div class="dwText">
+            <h1>
+                <span id="create">Strategy, branding &</span>
+            </h1>
+            <h1>
+                <span id="create">e-commerce</span>
+            </h1>
+        </div>
+    </div>
+
+    <div class="contactContainer">
+        <div class="contactImg"></div>
+        <div class="contactCard">
+            <div class="contactDetails">
+                <div class="contactHeaderText">
+                    <h2>Contact</h2>
+                </div>
+                <div class="email">
+                    <h4>Message Us</h4>
+                    <a href="mailto:info@cerebremedia.com" class="link">info@cerebremedia.com</a>
+                </div>
+                <div class="career">
+                    <h4>Work with Us</h4>
+                    <a href="mailto:careers@cerebremedia.com" class="link">Drop CV</a><br>
+                    <a href="" class="link">Careers</a>
+                </div>
+                <div class="telephone">
+                    <h4>Reach Us</h4>
+                    <a href="" class="link">+234 (0)81 712 999 34</a>
+                </div>
+                <div class="map">
+                    <h4>Find Us</h4>
+                    <a href="" class="link">15, Oroleye Cresecent <br>Opebi, Lagos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"
+        integrity="sha512-QcYm1q7RbnXmwY7HJ0H7938IS0MalTPYqGUF0fIwQgEjMBt2tqjDBt+R5I+ppdwEohjMdHnFU0H+RxmrGQ8qcg=="
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"
+        integrity="sha512-UwcC/iaz5ziHX7V6LjSKaXgCuRRqbTp1QHpbOJ4l1nw2/boCfZ2KlFIqBUA/uRVF0onbREnY9do8rM/uT/ilqw=="
+        crossorigin="anonymous"></script>
+    <!-- Swiper Js -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+    <script src="./javascript/skrollr.js"></script>
+    <script src="./javascript/cerebre.js"></script>
+
+    <script>
+        //*2 how many to show
+        const viewWidht = (100 / 3) * 2;
+        //convert to px
+        function vwTOpx(value) {
+            const w = window,
+                d = document,
+                e = d.documentElement,
+                g = d.getElementsByTagName('body')[0],
+                x = w.innerWidth || e.clientWidth || g.clientWidth,
+                y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+            const result = (x * value) / 100;
+            return result;
+        }
+        //use the function to get width in px 
+        const inPx = vwTOpx(viewWidht);
+        //animation
+        $('#button-next').click(function () {
+            event.preventDefault();
+            $('.slideImagesContainer').animate({
+                scrollLeft: "+=" + inPx + 'px'
+            }, "fast");
+        });
+
+        $('#button-prev').click(function () {
+            event.preventDefault();
+            $('.slideImagesContainer').animate({
+                scrollLeft: "-=" + inPx + 'px'
+            }, "fast");
+        });
+    </script>
+    <script>
+        $(window).scroll(function () {
+            $('.nav').toggleClass('scroll', $(this).scrollTop() > 80);
+        });
+    </script>
+</body>
+
+</html>

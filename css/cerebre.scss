@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "./cerebreGlobal";
+
+
+// Navbar
+.nav{
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1200;
+    transition: all ease .5s;
+
+    &.scroll{
+        background: #171719;
+        box-shadow: 0 3px 20px rgba(black, 0.2);
+    }
+
+    .navContainer{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        .logo{
+            img{
+                width: 100px;
+                height: auto;
+
+                @media screen and (max-width: 991px) {
+                    width: 60px;
+                }
+            }
+        }
+
+        .navbar{
+            width: 45px;
+            height: 45px;
+            background-color: #fbf9f6;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: .3s linear;
+
+            &:hover{
+                transform: rotate(90deg);
+
+                @media screen and (max-width: 768px){
+                    transform: rotate(initial);
+            }
+            }
+
+            &.active{
+                .bars:nth-child(1){
+                    transform-origin: center;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    width: 65%;
+                    position: absolute;
+                }
+                .bars:nth-child(3){
+                    transform-origin: center;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                    width: 65%;
+                    position: absolute;
+                }
+
+                .bars:nth-child(2){
+                    display: none;
+                }
+            }
+    
+            .bars{
+                width: 60%;
+                height: 2px;
+                background-color: #000;
+                margin: 2px 0;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: .3s linear;
+            }
+        }
+    }
+}
+
+// NavContainer Display
+.navDisplay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 600;
+    overflow: hidden;
+    pointer-events: none;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        height: 100vh;
+    }
+    
+    .container{
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+        }
+        
+        .navContent{
+            width: 100%;
+            position: relative;
+            height: 100%;
+            
+            .sliders{
+                min-height: 100%;
+                width: 0;
+                background-color: #000;
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+
+                &.one{
+                    background-color: #222224;
+                }
+
+                &.two{
+                    background-color: #171719;
+                }
+
+            }
+
+            .navDescription{
+                position: absolute;
+                bottom: 50%;
+                left: 0;
+                z-index: 601;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                pointer-events: visible;
+                transform: scale(0);
+                opacity: 0;
+
+                @media screen and (max-width: 991px) {
+                    bottom: 10%;
+                }
+                
+                .navbarLink{
+                    font-size: 3rem;
+                    color: #fff;
+                    text-decoration: none;
+                    overflow: hidden;
+                    font-weight: bolder;
+                    width: 80%;
+                    margin: .7rem 0;
+                    position: relative;
+
+                    @media screen and (max-width: 991px) {
+                        font-size: 1.5rem;
+                    }
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: -100%;
+                        width: 25%;
+                        height: 1px;
+                        background: #fff;
+                        transition: all .5s ease-in-out;
+                    }
+
+                    &:hover::before{
+                        left: 0;
+                        transform: translateX(0%);
+                        transform-origin: left;
+                    }
+                }
+
+                .navDescText{
+                    color: #fff;
+                    overflow: hidden;
+                    font-size: 1.3rem;
+                    width: 80%;
+                    margin: .7rem 0;
+                    @media screen and (max-width: 991px) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Section 1 {the display overlay}
+.displayWrapper{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10000;
+    overflow: hidden;
+    pointer-events: none;
+    
+    .container{
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+        }
+        
+        .display{
+            width: 100%;
+            position: relative;
+            height: 100%;
+    
+            .slider{
+                min-height: 100%;
+                width: 100%;
+                background-color: #000;
+                position: relative;
+            }
+    }
+    
+    }
+
+    .dwText{
+        position: absolute;
+        left: 0;
+        bottom: 10%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+            bottom: 20%;
+        }
+
+        h1{
+            overflow: hidden;
+            font-weight: bolder;
+            color: #fff;
+            font-size: 6rem;
+
+            @media screen and (max-width: 768px) {
+                font-size: 2rem;
+            }
+
+            span{
+                display: inline-block;
+                transform: translateY(100%);
+            }
+        }
+    }
+}
+
+// Section 2 {the main container for content}
+.mainContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+
+    @media screen and (max-width: 991px) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        transform: none !important;
+    }
+
+    section{
+        min-width: calc(100% / 3);
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #010101;
+        position: relative;
+
+
+    &:nth-child(2){
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../assets/Needle\ and\ thread.jpg") center no-repeat;
+        background-size: cover;
+    }
+    
+    &:nth-child(3){
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../assets/grill_lines.jpg") center no-repeat;
+        background-size: cover;
+    }
+    
+    &:nth-child(4){
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../assets/WhatsApp\ Image\ 2021-03-11\ at\ 16.57.10.jpg") center no-repeat;
+        background-size: cover;
+    }
+    
+    &:nth-child(5){
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../assets/WhatsApp\ Image\ 2021-03-11\ at\ 15.10.47.jpg") center no-repeat;
+        background-size: cover;
+    }
+    
+    &:nth-child(6){
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../assets/WhatsApp\ Image\ 2021-03-11\ at\ 17.56.55.jpg") center no-repeat;
+        background-size: cover;
+    }
+    .content{
+        padding: 0 1.8rem;
+        width: 85%;
+        position: relative;
+
+        @media screen and (max-width: 991px) {
+            width: 100%;
+        }
+
+        h1{
+            font-size: 3rem;
+            color: #fff;
+            font-weight: 100;
+
+            span{
+                font-size: 5rem;
+                text-transform: capitalize;
+                display: inline-block;
+                font-weight: 700;
+            }
+
+            @media screen and (max-width: 991px) {
+                font-size: 2rem;
+
+                span{
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        h2{
+            font-size: 4rem;
+            color: #fff;
+
+            @media screen and (max-width: 991px) {
+                font-size: 2rem;
+            }
+        }
+        p{
+            font-size: 1.2em;
+            color: #fff;
+            line-height: 1.4em;
+        }
+    }
+    }
+}
+
+@import "./about";
+@import "./contact";
+

@@ -1,0 +1,104 @@
+.contactContainer{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #171719;
+    display: flex;
+
+    @media screen and (max-width: 991px) {
+        flex-direction: column;
+    }
+
+    .contactImg{
+        width: calc(100% - (100% / 4));
+        min-height: 100%;
+        background: url("../assets/_MG_2291\ copy.jpg") center no-repeat;
+        background-size: cover;
+
+        @media screen and (max-width: 991px) {
+            width: 100%;
+            min-height: 50vh;
+        }
+    }
+
+    .contactCard{
+        padding: 5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        min-height: 40%;
+
+        @media screen and (max-width: 991px) {
+            width: 100%;
+        }
+        .contactDetails{
+            width: calc(100vw / 3);
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5rem;
+
+            @media screen and (max-width: 991px) {
+                width: 100%;
+                padding: 0 1.5rem;
+            }
+    
+            div{
+                margin: 1.7rem 0;
+                position: relative;
+                h2{
+                    font-size: 3.2rem;
+                }
+                h4{
+                    color: #171719;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: inherit;
+                    display: inline-block;
+                    position: relative;
+                    overflow: hidden;
+                    margin-bottom: .4rem;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 1px;
+                        background: #171719;
+                        transition: all .5s ease-in-out;
+                    }
+
+                    &:hover::before{
+                        left: 0;
+                        transform: translateX(0%);
+                        transform-origin: left;
+                    }
+                }
+                
+                .contactHeaderText{
+                    margin-bottom: 120rem !important;
+                }
+    
+                .email{
+                    margin-top: 1rem;
+                }
+
+                .map{
+                    a{
+                        &::before{
+                            display: none;
+                            position: initial;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
